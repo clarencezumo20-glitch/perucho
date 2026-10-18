@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"><meta name="theme-color" content="#101923"><title>Perú Arena · 10 amigos, 3 minutos</title>
+<style>
+:root{color-scheme:dark;--bg:#101923;--card:#182632;--muted:#91a4b5;--line:#30404f;--red:#ed5752;--text:#edf3f7}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;overflow:hidden}button,input{font:inherit}button{border:0;border-radius:12px;padding:13px 18px;background:var(--red);color:#fff;font-weight:800;cursor:pointer;touch-action:manipulation}button:disabled{opacity:.4;cursor:default}button.secondary{background:#2c3e4e}button:focus-visible,input:focus-visible{outline:3px solid #f8cc71;outline-offset:3px}input{width:100%;background:#101b25;color:white;border:1px solid #3b4e5d;border-radius:12px;padding:14px;margin:6px 0 14px}label{font-size:12px;font-weight:700;color:#b8c8d4}p{line-height:1.5}small{color:var(--muted)}[hidden]{display:none!important}canvas{display:block;width:100vw;height:100dvh;touch-action:none}.screen{position:fixed;inset:0;background:radial-gradient(ellipse at 70% 0%,#304134a8,transparent 70%),#101923e8;display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto;z-index:20}.card{width:min(100%,460px);background:#172531f2;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 25px 100px #0006}.eyebrow{font-size:11px;letter-spacing:3px;color:#e4bd77;font-weight:800}h1{font-size:44px;line-height:1.05;letter-spacing:-2px;margin:16px 0 8px}h1 span{color:var(--red)}h2{margin:10px 0 6px;font-size:28px;letter-spacing:-1px}.sub{color:var(--muted);font-size:14px;margin:10px 0 24px}.row{display:flex;gap:10px;align-items:center}.row>*{flex:1}.divider{height:1px;background:var(--line);margin:22px 0}.wide{width:100%}.joinrow input{margin:0;text-transform:uppercase;letter-spacing:4px;min-width:0}.joinrow button{flex:0 0 auto}.error{color:#ffaeaa;font-size:13px;min-height:20px;margin-top:12px}.roomcode{font-size:36px;font-weight:900;letter-spacing:6px;color:#f5cf83;font-variant-numeric:tabular-nums;margin:12px 0}.roster{list-style:none;margin:16px 0;padding:0;max-height:230px;overflow:auto}.roster li{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid #30404f80;font-size:14px}.dot{height:10px;width:10px;flex:none;border-radius:50%}.roster li span:nth-child(2){flex:1}.roster small{font-size:11px}.help{font-size:12px;color:var(--muted);margin:16px 0 0}.hud{position:fixed;top:max(12px,env(safe-area-inset-top));left:16px;right:16px;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;gap:10px;z-index:3}.tile{background:#101923d9;border:1px solid #52627455;border-radius:14px;padding:10px 14px;backdrop-filter:blur(8px)}.clock{font-size:27px;font-weight:900;text-align:center;font-variant-numeric:tabular-nums}.tiny{font-size:9px;letter-spacing:2px;color:#a7b5c1}.health{height:5px;width:110px;background:#39434b;border-radius:5px;margin-top:8px;overflow:hidden}.health i{display:block;background:#81d3a6;height:100%;width:100%}.hudname{font-size:12px;font-weight:700}.hud .right{text-align:right;font-size:12px;line-height:1.6}.bottomactions{position:fixed;top:108px;right:16px;z-index:5;display:flex;gap:6px}.bottomactions button{font-size:11px;padding:8px 10px;background:#172632c9}.sticks{position:fixed;bottom:max(28px,env(safe-area-inset-bottom));left:max(28px,env(safe-area-inset-left));right:max(28px,env(safe-area-inset-right));display:flex;justify-content:space-between;pointer-events:none;z-index:5}.stick{width:126px;height:126px;border-radius:50%;border:1px solid #cad5e44a;background:#cad5e40c;position:relative;touch-action:none;pointer-events:auto;user-select:none;-webkit-user-select:none}.stick:after{position:absolute;content:attr(data-label);font-size:9px;letter-spacing:2px;bottom:-20px;left:0;right:0;text-align:center;color:#b7c7d7}.knob{position:absolute;left:41px;top:41px;width:44px;height:44px;border-radius:50%;background:#d2dce43d;border:1px solid #ffffff60;pointer-events:none}.aim{border-color:#ef686666;background:#f7636312}.aim .knob{background:#ed575266;border-color:#ff8d8d}.feed{position:fixed;top:156px;right:16px;text-align:right;color:#bac9d2;font-size:11px;line-height:1.8;pointer-events:none;z-index:3}.toast{position:fixed;left:50%;top:90px;transform:translateX(-50%);background:#a83f37ef;padding:9px 16px;border-radius:12px;font-size:12px;text-align:center;z-index:30;max-width:90%;pointer-events:none}.respawn{position:fixed;top:45%;left:0;right:0;text-align:center;pointer-events:none;font-size:22px;font-weight:800;text-shadow:0 2px 10px #000;z-index:4}.instructions{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-size:11px;color:#adbfcd;pointer-events:none;text-align:center}.results{max-height:44dvh;overflow:auto;margin:18px 0}table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;color:#91a4b5;font-size:11px}td,th{padding:10px 6px;border-bottom:1px solid #30404f}td:nth-child(n+3),th:nth-child(n+3){text-align:right}.myrow{background:#ffffff08}.winner{color:#f5cf83} .offline{font-size:11px;color:#f5cf83;margin-top:8px}
+@media(pointer:fine){.sticks{opacity:.55}.instructions{bottom:24px}}@media(max-height:550px){.card{padding:18px 24px}h1{font-size:34px;margin:8px 0}.sub{margin:6px 0 14px}.divider{margin:14px 0}.roster{max-height:125px}.roomcode{font-size:28px;margin:6px 0}.stick{width:108px;height:108px}.knob{left:32px;top:32px}.sticks{bottom:22px}.results{max-height:32dvh}}@media(max-width:420px){.card{padding:22px}.hud{left:10px;right:10px}.tile{padding:8px 10px}.health{width:80px}.sticks{left:20px;right:20px}.stick{width:112px;height:112px}.knob{left:34px;top:34px}.feed{max-width:45%;font-size:10px}.instructions{bottom:174px;width:90%}}
+</style></head>
+<body>
+<canvas id="arena" aria-label="Arena multijugador"></canvas>
+<div id="home" class="screen"><section class="card">
+<div class="eyebrow">🇵🇪 MULTIJUGADOR PRIVADO</div><h1>PERÚ<br><span>ARENA.</span></h1><p class="sub">Hasta 10 amigos. Tres minutos.<br>Muévete, apunta y consigue más eliminaciones.</p>
+<label for="name">TU NOMBRE</label><input id="name" maxlength="16" placeholder="Tu apodo" autocomplete="nickname">
+<button class="wide" id="create">Crear sala →</button><div class="divider"></div>
+<label for="code">¿TIENES UN CÓDIGO?</label><div class="row joinrow"><input id="code" maxlength="6" placeholder="ABC123" autocomplete="off" autocapitalize="characters" spellcheck="false"><button id="join" class="secondary">Entrar</button></div>
+<div id="homeError" class="error" role="alert"></div><p class="help">Celular: dos controles táctiles. PC: WASD y ratón.<br>Se necesitan al menos 2 jugadores. Sin bots.</p>
+</section></div>
+<div id="lobby" class="screen" hidden><section class="card"><div class="eyebrow">PUNTO DE ENCUENTRO</div><h2>Reúne a tu escuadra.</h2><small>Código de sala · <span id="count">1</span>/10 jugadores</small><div class="roomcode" id="roomCode"></div><div class="row"><button id="invite">Compartir enlace</button><button id="copy" class="secondary">Copiar código</button></div><ul class="roster" id="roster"></ul><button class="wide" id="start">Iniciar · 3 minutos</button><p class="help" id="waiting"></p><div id="lobbyError" class="error" role="alert"></div><button id="leaveLobby" class="secondary wide">Salir de la sala</button></section></div>
+<div id="hud" class="hud" hidden><div class="tile"><div class="hudname" id="myName"></div><div class="health"><i id="hp"></i></div><div class="tiny" id="hpText" style="margin-top:6px">100 VIDA</div></div><div class="tile"><div class="tiny">FIN DE LA PARTIDA</div><div class="clock" id="time">3:00</div></div><div class="tile right"><div class="tiny">ELIMINACIONES</div><b id="kills">0</b><div id="leader">—</div></div></div>
+<div id="actions" class="bottomactions" hidden><button id="fullscreen">Pantalla completa</button><button id="leaveGame">Salir</button></div>
+<div id="feed" class="feed" hidden></div><div id="respawn" class="respawn" hidden></div>
+<div id="controls" class="sticks" hidden><div id="moveStick" class="stick" data-label="MOVER"><div class="knob"></div></div><div id="aimStick" class="stick aim" data-label="APUNTAR / DISPARAR"><div class="knob"></div></div></div><div id="instructions" class="instructions" hidden>Izquierda: moverte · Derecha: apunta y dispara</div>
+<div id="results" class="screen" hidden><section class="card"><div class="eyebrow">TIEMPO CUMPLIDO · 3:00</div><h2 id="winner">Fin de la partida</h2><small>Gana quien consiga más eliminaciones.</small><div class="results"><table><thead><tr><th>#</th><th>Jugador</th><th>Elim.</th><th>Caídas</th></tr></thead><tbody id="scores"></tbody></table></div><button class="wide" id="again">Revancha · 3 minutos</button><p class="help" id="againHelp"></p><button class="wide secondary" id="leaveResult">Salir</button><div id="resultError" class="error" role="alert"></div></section></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id),canvas=$('arena'),ctx=canvas.getContext('2d');
+let auth=null,world=null,snap=null,events=null,view='home',connected=false,lastSnapshot=0,toastTimer,activeRequest=false,inputBusy=false,lastState='',aimAngle=0,mouseFire=false;
+let width=innerWidth,height=innerHeight,zoom=1,camera={x:900,y:600},previousTime=performance.now();
+const visual=new Map(),keys=new Set(),move={x:0,y:0},aim={x:0,y:0},pointer={x:0,y:0};
+const params=new URLSearchParams(location.search);if(params.has('room'))$('code').value=params.get('room').slice(0,6).toUpperCase();
+try{$('name').value=localStorage.getItem('peru-arena-name')||''}catch{}
+function toast(text){$('toast').textContent=text;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,3500)}
+function resetControls(){keys.clear();move.x=move.y=aim.x=aim.y=0;mouseFire=false;document.querySelectorAll('.knob').forEach(el=>el.style.transform='translate(0,0)')}
+function screen(next){
+view=next;for(const id of ['home','lobby','results'])$(id).hidden=id!==next;
+for(const id of ['hud','actions','controls','feed','instructions'])$(id).hidden=next!=='playing';
+if(next!=='playing'){$('respawn').hidden=true;resetControls()}
+}
+async function api(route,data){
+const response=await fetch('/api/'+route,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(9000)});
+let result;try{result=await response.json()}catch{throw Error('El servidor no respondió. Espera unos segundos y vuelve a intentar.')}
+if(!response.ok){const error=Error(result.error||'No se pudo conectar.');error.status=response.status;throw error}return result;
+}
+async function enter(route){
+if(activeRequest)return;activeRequest=true;$('create').disabled=$('join').disabled=true;$('homeError').textContent='Conectando…';
+try{
+auth=await api(route,{name:$('name').value,code:$('code').value});world=auth.world;
+try{localStorage.setItem('peru-arena-name',$('name').value)}catch{}
+$('roomCode').textContent=auth.code;screen('lobby');lastState='';visual.clear();
+events=new EventSource('/api/events?token='+encodeURIComponent(auth.token));
+events.onopen=()=>{connected=true};
+events.onmessage=e=>{snap=JSON.parse(e.data);lastSnapshot=performance.now();connected=true;update()};
+events.onerror=()=>{connected=false;resetControls()};
+$('homeError').textContent='';
+}catch(e){$('homeError').textContent=e.message||'No se pudo conectar.'}
+finally{activeRequest=false;$('create').disabled=$('join').disabled=false}
+}
+$('create').onclick=()=>enter('create');$('join').onclick=()=>enter('join');
+function element(tag,text){const el=document.createElement(tag);el.textContent=text;return el}
+function ranking(){return [...snap.players].sort((a,b)=>b.kills-a.kills||a.deaths-b.deaths||a.name.localeCompare(b.name))}
+function update(){
+if(!auth||!snap)return;const me=snap.players.find(p=>p.id===auth.id);if(!me){leave(false);toast('Tu sesión terminó. Vuelve a entrar.');return}
+if(lastState!==snap.state){lastState=snap.state;screen(snap.state==='playing'?'playing':snap.state==='finished'?'results':'lobby');if(snap.state==='playing'){visual.clear();camera.x=me.x;camera.y=me.y;resetControls()}}
+const host=snap.host===auth.id;
+if(view==='lobby'){
+$('count').textContent=snap.players.length;$('roster').replaceChildren();
+for(const p of snap.players){const li=document.createElement('li'),dot=element('span','');dot.className='dot';dot.style.background=p.color;li.append(dot,element('span',p.name+(p.id===auth.id?' (tú)':'')),element('small',p.id===snap.host?'CREADOR':''));$('roster').append(li)}
+$('start').hidden=!host;$('start').disabled=snap.players.length<2;
+$('waiting').textContent=host?'Comparte el enlace. Cuando entren tus amigos, inicia la partida.':'El creador de la sala iniciará la partida.';
+}
+if(view==='playing'){
+const seconds=Math.ceil(snap.timeLeft/1000);$('time').textContent=Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0');$('time').style.color=seconds<=30?'#ff8d87':'';
+$('myName').textContent=me.name;$('hp').style.width=me.hp+'%';$('hpText').textContent=me.hp+' VIDA';$('kills').textContent=me.kills;
+const top=ranking()[0];$('leader').textContent=top?top.name+' · '+top.kills:'';
+$('respawn').hidden=me.hp>0;$('respawn').textContent='Reapareces en '+Math.ceil(me.respawn/1000)+'…';
+$('feed').replaceChildren(...snap.feed.map(f=>element('div',f.by+' → '+f.victim)));
+}
+if(view==='results'){
+const rows=ranking(),winners=rows.filter(p=>p.kills===rows[0].kills);
+$('winner').textContent=winners.length>1?'¡Empate!':('Ganó '+rows[0].name+' 🏆');$('scores').replaceChildren();
+rows.forEach((p,i)=>{const row=document.createElement('tr');if(p.id===auth.id)row.className='myrow';row.append(element('td',String(i+1)),element('td',p.name+(p.id===auth.id?' (tú)':'')),element('td',String(p.kills)),element('td',String(p.deaths)));$('scores').append(row)});
+$('again').hidden=!host;$('again').disabled=snap.players.length<2;$('againHelp').textContent=host?'La revancha reinicia los puntos. Necesitas al menos 2 jugadores.':'Espera a que el creador inicie la revancha.';
+}
+}
+async function start(){try{await api('start',{token:auth.token})}catch(e){toast(e.message)}}
+$('start').onclick=start;$('again').onclick=start;
+function leave(notify=true){
+const old=auth;events?.close();events=null;auth=null;snap=null;connected=false;lastState='';visual.clear();resetControls();screen('home');
+if(notify&&old)fetch('/api/leave',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:old.token}),keepalive:true}).catch(()=>{});
+}
+for(const id of ['leaveLobby','leaveGame','leaveResult'])$(id).onclick=()=>leave();
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(auth.code);toast('Código copiado: '+auth.code)}catch{toast('Código de sala: '+auth.code)}};
+$('invite').onclick=async()=>{
+const url=new URL(location.href);url.search='';url.searchParams.set('room',auth.code);
+try{if(navigator.share)await navigator.share({title:'Perú Arena',text:'Entra a mi sala: '+auth.code,url:url.href});else{await navigator.clipboard.writeText(url.href);toast('Enlace copiado. Envíalo a tus amigos.')}}catch(e){if(e.name!=='AbortError')toast('Comparte la dirección de esta página y el código '+auth.code)}
+};
+$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else toast('Gira el celular para jugar más cómodo.')}catch{toast('Gira el celular para jugar más cómodo.')}};
+function stick(id,target){
+const el=$(id),knob=el.querySelector('.knob');let pid=null;
+function position(e){const r=el.getBoundingClientRect(),radius=r.width*.32,dx=e.clientX-r.left-r.width/2,dy=e.clientY-r.top-r.height/2,len=Math.hypot(dx,dy),scale=len>radius?radius/len:1;target.x=dx*scale/radius;target.y=dy*scale/radius;knob.style.transform=`translate(${dx*scale}px,${dy*scale}px)`}
+el.addEventListener('pointerdown',e=>{if(pid!==null)return;e.preventDefault();pid=e.pointerId;el.setPointerCapture(pid);position(e)});
+el.addEventListener('pointermove',e=>{if(e.pointerId===pid)position(e)});
+for(const event of ['pointerup','pointercancel','lostpointercapture'])el.addEventListener(event,e=>{if(e.pointerId!==pid)return;pid=null;target.x=target.y=0;knob.style.transform='translate(0,0)'});
+}
+stick('moveStick',move);stick('aimStick',aim);
+window.addEventListener('keydown',e=>{if(view!=='playing')return;if(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowLeft','ArrowDown','ArrowRight','Space'].includes(e.code)){e.preventDefault();keys.add(e.code)}});
+window.addEventListener('keyup',e=>keys.delete(e.code));window.addEventListener('blur',resetControls);document.addEventListener('visibilitychange',resetControls);
+canvas.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'){pointer.x=e.clientX;pointer.y=e.clientY;const me=snap?.players.find(p=>p.id===auth?.id);if(me)aimAngle=Math.atan2(pointer.y-height/2+(camera.y-me.y)*zoom,pointer.x-width/2+(camera.x-me.x)*zoom)}});
+canvas.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&view==='playing'){mouseFire=true;canvas.setPointerCapture(e.pointerId)}});
+window.addEventListener('pointerup',()=>mouseFire=false);canvas.addEventListener('contextmenu',e=>e.preventDefault());
+setInterval(async()=>{
+if(!auth||inputBusy)return;inputBusy=true;
+let mx=move.x,my=move.y;if(keys.has('KeyA')||keys.has('ArrowLeft'))mx-=1;if(keys.has('KeyD')||keys.has('ArrowRight'))mx+=1;if(keys.has('KeyW')||keys.has('ArrowUp'))my-=1;if(keys.has('KeyS')||keys.has('ArrowDown'))my+=1;
+const aiming=Math.hypot(aim.x,aim.y)>.18;if(aiming)aimAngle=Math.atan2(aim.y,aim.x);
+const active=view==='playing'&&connected&&!document.hidden&&performance.now()-lastSnapshot<2500;
+try{await api('input',{token:auth.token,mx:active?mx:0,my:active?my:0,angle:aimAngle,fire:active&&(aiming||mouseFire||keys.has('Space'))})}
+catch(e){if(e.status===401){leave(false);toast('La sala se cerró. Crea una nueva o vuelve a entrar.')}else connected=false}
+finally{inputBusy=false}
+},50);
+function resize(){width=innerWidth;height=innerHeight;const d=Math.min(devicePixelRatio||1,2);canvas.width=width*d;canvas.height=height*d;ctx.setTransform(d,0,0,d,0,0);zoom=Math.max(.38,Math.min(1.2,Math.min(width/850,height/620)))}
+window.addEventListener('resize',resize);resize();
+function rect(x,y,w,h,color){ctx.fillStyle=color;ctx.fillRect(x,y,w,h)}
+function drawPlayer(p,dt){
+let v=visual.get(p.id);if(!v||Math.hypot(v.x-p.x,v.y-p.y)>220){v={x:p.x,y:p.y};visual.set(p.id,v)}v.x+=(p.x-v.x)*Math.min(1,dt*18);v.y+=(p.y-v.y)*Math.min(1,dt*18);
+if(p.hp<=0)return;ctx.save();ctx.translate(v.x,v.y);
+if(p.shield){ctx.strokeStyle=p.color;ctx.globalAlpha=.45;ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,28,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=1}
+ctx.fillStyle='#0005';ctx.beginPath();ctx.ellipse(2,9,22,15,0,0,Math.PI*2);ctx.fill();
+ctx.save();ctx.rotate(p.angle);rect(5,-7,30,8,'#0c121a');rect(14,-8,20,4,'#a7b1b7');ctx.fillStyle=p.color;ctx.beginPath();ctx.ellipse(0,0,18,15,0,0,Math.PI*2);ctx.fill();rect(-8,-13,7,26,'#f8e8cc');ctx.fillStyle='#d2a374';ctx.beginPath();ctx.arc(0,0,10,0,Math.PI*2);ctx.fill();ctx.fillStyle='#344345';ctx.beginPath();ctx.arc(-2,-1,11,Math.PI*.3,Math.PI*1.7);ctx.fill();ctx.restore();
+ctx.textAlign='center';ctx.font='bold 12px system-ui';ctx.fillStyle=p.id===auth?.id?'#fff':'#c9d8e2';ctx.fillText(p.name+(p.id===auth?.id?' · TÚ':''),0,-36);rect(-19,-29,38,4,'#0d1720');rect(-19,-29,38*p.hp/100,4,p.color);ctx.restore();
+}
+function render(now){
+const dt=Math.min((now-previousTime)/1000,.05);previousTime=now;ctx.clearRect(0,0,width,height);rect(0,0,width,height,'#101923');
+const me=snap?.players.find(p=>p.id===auth?.id);
+if(me){camera.x+=(me.x-camera.x)*Math.min(1,dt*12);camera.y+=(me.y-camera.y)*Math.min(1,dt*12)}
+ctx.save();ctx.translate(width/2,height/2);ctx.scale(zoom,zoom);ctx.translate(-camera.x,-camera.y);
+const map=world||{width:1800,height:1200,walls:[{x:500,y:300,w:250,h:90},{x:1000,y:600,w:90,h:250},{x:700,y:850,w:250,h:80}]};
+rect(0,0,map.width,map.height,'#263733');ctx.strokeStyle='#ffffff06';ctx.lineWidth=1;
+for(let x=0;x<map.width;x+=60){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,map.height);ctx.stroke()}
+for(let y=0;y<map.height;y+=60){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(map.width,y);ctx.stroke()}
+ctx.strokeStyle='#d7bc7133';ctx.lineWidth=6;ctx.strokeRect(6,6,map.width-12,map.height-12);
+ctx.fillStyle='#b4c0a512';ctx.font='900 100px system-ui';ctx.textAlign='center';ctx.fillText('PERÚ ARENA',900,470);ctx.font='bold 25px system-ui';ctx.fillText('10 AMIGOS / 180 SEGUNDOS',900,510);
+for(const w of map.walls){rect(w.x+7,w.y+9,w.w,w.h,'#0005');rect(w.x,w.y,w.w,w.h,'#607062');rect(w.x,w.y,w.w,7,'#7b8976');rect(w.x+8,w.y+12,w.w-16,w.h-23,'#536353');ctx.strokeStyle='#81917644';ctx.lineWidth=2;ctx.strokeRect(w.x+10,w.y+12,w.w-20,w.h-24)}
+if(snap){for(const b of snap.bullets){ctx.fillStyle='#ffe8a0';ctx.shadowBlur=8;ctx.shadowColor=b.color;ctx.beginPath();ctx.arc(b.x,b.y,4,0,Math.PI*2);ctx.fill()}ctx.shadowBlur=0;for(const p of snap.players)drawPlayer(p,dt)}
+ctx.restore();
+if(auth&&(!connected||now-lastSnapshot>2500)){ctx.fillStyle='#121a24e8';ctx.fillRect(0,height/2-25,width,50);ctx.fillStyle='#f7cc79';ctx.font='bold 14px system-ui';ctx.textAlign='center';ctx.fillText('Reconectando… comprueba tu internet.',width/2,height/2+5)}
+requestAnimationFrame(render);
+}
+requestAnimationFrame(render);
+})();
+</script></body></html>
