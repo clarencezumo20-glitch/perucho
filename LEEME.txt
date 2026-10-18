@@ -1,0 +1,92 @@
+PERU ARENA - 10 JUGADORES / PARTIDAS DE 3 MINUTOS
+================================================
+
+ESTO ES UN JUEGO MULTIJUGADOR REAL, NO UNA DEMO CON BOTS.
+El proyecto esta preparado para subirlo a internet. El ZIP por si solo NO
+es un enlace publico. Necesitas crear el servicio del paso 3.
+
+1. DESCOMPRIME
+Descarga el ZIP, haz clic derecho y elige "Extraer todo".
+Abre la carpeta extraida. Debes ver server.js, package.json y la carpeta public.
+No abras public/index.html con doble clic: necesita el servidor.
+
+2. SUBE LOS ARCHIVOS A GITHUB
+- Abre https://github.com/ y entra o crea tu cuenta.
+- Arriba pulsa + y luego "New repository".
+- Nombre: peru-arena. Puedes elegir Private. Pulsa "Create repository".
+- En el repositorio vacio, pulsa "uploading an existing file".
+  Si ya tiene archivos: "Add file" > "Upload files".
+- Arrastra LOS ARCHIVOS Y CARPETAS QUE ESTAN DENTRO de la carpeta extraida.
+  Arrastra tambien la carpeta public completa, sin cambiar su nombre.
+  NO subas el ZIP ni solo index.html.
+- Pulsa "Commit changes" (o "Propose changes", segun la pantalla).
+- Comprueba que ves server.js y package.json en la primera pantalla del
+  repositorio, y public/index.html dentro de public.
+
+3. PONLO ONLINE EN RENDER
+- Abre https://dashboard.render.com/ y entra o crea tu cuenta.
+- Pulsa "New +" > "Web Service". No elijas "Static Site".
+- Conecta GitHub y autoriza el acceso al repositorio peru-arena.
+- Selecciona el repositorio y pulsa "Connect".
+- Rellena:
+    Name: peru-arena (o un nombre disponible)
+    Language/Runtime: Node
+    Branch: main (o la que aparezca en tu repositorio)
+    Root Directory: DEJALO VACIO
+    Build Command: npm install
+    Start Command: npm start
+    Instance Type: Free, si aparece disponible
+- No agregues base de datos. No necesitas variables secretas.
+- Pulsa "Deploy Web Service" y espera a que figure "Live".
+- Arriba veras un enlace parecido a https://tu-nombre.onrender.com.
+  Ese es el enlace para jugar. Abrelo.
+- Si ves un error, abre "Logs". Copia el mensaje de error para pedir ayuda.
+
+4. JUEGA CON TUS AMIGOS
+- Tu: abre el enlace, escribe tu apodo y pulsa "Crear sala".
+- Pulsa "Compartir enlace" y enviaselo a tus amigos.
+- Ellos: abren el enlace, escriben un apodo y pulsan "Entrar".
+  El codigo aparece automaticamente en el enlace; tambien pueden escribirlo.
+- Pueden entrar entre 2 y 10 personas por sala, incluido el creador.
+- Cuando esten listos, el creador pulsa "Iniciar - 3 minutos".
+- Durante la partida no se aceptan jugadores nuevos. Al terminar pueden entrar
+  y pueden jugar la revancha. Revancha reinicia los puntos.
+- Celular: control izquierdo para caminar; arrastra el derecho para apuntar
+  y disparar. Gira el celular si prefieres jugar horizontal.
+- PC: WASD o flechas para moverte; raton para apuntar y clic para disparar.
+- Cada impacto quita 25 de vida. Al caer reapareces en unos 2 segundos.
+- Al reaparecer tienes un escudo breve, que se pierde si disparas.
+- Gana quien tenga mas eliminaciones al finalizar los 3 minutos.
+  Si varios tienen las mismas eliminaciones, la pantalla indica empate.
+- El creador puede iniciar otra partida. Si se desconecta durante mas de
+  40 segundos, otro jugador pasa a ser el creador.
+
+OPCIONAL: PROBAR PRIMERO EN TU PC SIN SUBIR NADA
+- Instala Node.js LTS desde https://nodejs.org/en/download/.
+- Abre INICIAR_WINDOWS.bat con doble clic.
+- Abre http://localhost:3000 en DOS pestanas del navegador.
+- Crea sala en una y entra con otro nombre en la otra.
+- No cierres la ventana negra del servidor mientras juegas.
+- Esto NO conecta a tus amigos de otras casas. Para eso usa Render.
+- Desde terminal, el equivalente es: npm start
+- Para las pruebas automaticas: npm test
+
+COSAS A SABER
+- El plan Free de Render tiene limites y se duerme tras 15 minutos sin trafico;
+  al abrirlo de nuevo puede tardar alrededor de un minuto en despertar.
+  Consulta el plan que muestre Render antes de crear el servicio.
+- Esta version es para pruebas entre amigos. La suavidad depende de la red
+  y del servidor; todavia no esta probada con 10 celulares reales.
+- Las salas y los puntos viven en memoria: se borran al reiniciar, desplegar
+  cambios o dormir el servidor. Si pasa, vuelve a crear una sala.
+- Usa una sola instancia del servidor; esta version no comparte salas entre
+  varios servidores. No necesitas base de datos para probar.
+- Al refrescar una pagina se entra con una sesion nueva. La anterior se elimina
+  tras 40 segundos sin recibir controles. Si la sala parece llena, espera.
+- No hay cuentas, chat, compras ni guardado permanente de resultados.
+
+FUENTES DE LAS INSTRUCCIONES DE PUBLICACION
+https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
+https://render.com/docs/deploy-node-express-app
+https://render.com/docs/web-services
+https://render.com/docs/free

@@ -1,0 +1,13 @@
+{
+  "name": "peru-arena",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arena multijugador para 2 a 10 amigos, partidas de 3 minutos",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
